@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* THEME: "Santa Monica Coast" -- deep ocean teal + sea mist + sunset terracotta on warm sand (R G B) */
+  --color-primary: 31 78 90;         /* #1F4E5A deep ocean teal: buttons, footer, links */
+  --color-secondary: 207 224 220;    /* #CFE0DC sea mist: soft section background */
+  --color-accent: 176 90 55;         /* #B05A37 sunset terracotta: italic highlights */
+  --color-surface: 251 248 243;      /* #FBF8F3 warm cream: page background */
+  --color-surface-alt: 241 234 223;  /* #F1EADF sand: alternate sections */
+  --color-ink: 30 42 46;             /* #1E2A2E headings */
+  --color-ink-soft: 74 90 94;        /* #4A5A5E body text */
+
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Montserrat", system-ui, sans-serif;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-surface font-body text-ink-soft antialiased; }
+  h1, h2, h3, h4 { @apply font-heading text-ink; }
+  h1 { @apply text-[2.5rem] leading-[1.1] sm:text-5xl lg:text-[4rem]; }
+  h2 { @apply text-3xl leading-[1.15] sm:text-4xl lg:text-5xl; }
+  h3 { @apply text-2xl sm:text-3xl lg:text-4xl; }
+  h4 { @apply text-2xl; }
+  p  { @apply text-[15px] leading-[1.8] sm:text-base; }
+  em { @apply text-accent; }
+}
+
+@layer components {
+  .section { @apply px-6 py-16 sm:px-10 sm:py-20 lg:py-28; }
+  .container-page { @apply mx-auto w-full max-w-page; }
+  .eyebrow { @apply mb-4 text-xs font-medium uppercase tracking-[0.2em] text-primary; }
+  .btn {
+    @apply inline-block border border-primary bg-primary px-8 py-3.5 text-xs font-medium uppercase tracking-[0.18em] text-surface transition hover:bg-transparent hover:text-primary;
+  }
+  .btn-outline {
+    @apply inline-block border border-primary px-8 py-3.5 text-xs font-medium uppercase tracking-[0.18em] text-primary transition hover:bg-primary hover:text-surface;
+  }
+  .link-more { @apply text-xs font-medium uppercase tracking-[0.18em] text-primary underline underline-offset-4; }
+}
